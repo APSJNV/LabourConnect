@@ -24,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "backend": "cd ../backend && npm start",
+    "both": "concurrently \"npm run backend\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
 }

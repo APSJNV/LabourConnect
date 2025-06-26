@@ -58,17 +58,27 @@ router.post('/labourer/:id', auth, [
     await booking.populate('labourer', 'name email phone category');
     await booking.populate('employer', 'name email phone');
 
-    // ✅ Send SMS to labourer
-    const messageBody = `New Booking:
-Client Address: ${location.address}
-Client Number: ${req.user.phone}
-Date: ${new Date(date).toLocaleDateString()}
-Time: ${timeSlot.startTime} - ${timeSlot.endTime}`;
+    // ✅ Prepare SMS message
+    const clientName = booking.employer.name;
+    const clientPhone = booking.employer.phone;
+    const clientAddress = location.address;
 
+    const startDateTime = `${new Date(date).toLocaleDateString()} ${timeSlot.startTime}`;
+    const endDateTime = `${new Date(date).toLocaleDateString()} ${timeSlot.endTime}`;
+
+    const messageBody = 
+`You have been booked by ${clientName}.
+Contact Number: ${clientPhone}
+Client Address: ${clientAddress}
+Work Start: ${startDateTime}
+Work End: ${endDateTime}
+Please contact the client for further details.`;
+
+    // ✅ Send SMS to labourer
     await client.messages.create({
       body: messageBody,
       from: process.env.TWILIO_PHONE_NUMBER,
-      to: `+91${labourerUser.phone}`  // ✅ Correct phone format
+      to: `+91${labourerUser.phone}`
     });
 
     res.status(201).json({
@@ -80,6 +90,7 @@ Time: ${timeSlot.startTime} - ${timeSlot.endTime}`;
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 
 
 
