@@ -1,0 +1,191 @@
+/* BookingForm.css */
+
+.booking-form-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.booking-header h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-section {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.form-section h3 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.workers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.worker-card {
+  padding: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.worker-card:hover {
+  border-color: #007bff;
+  background-color: #eef6ff;
+}
+
+.worker-card.selected {
+  border-color: #007bff;
+  background-color: #dbefff;
+}
+
+.worker-info h4 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.worker-info p {
+  font-size: 14px;
+  margin: 3px 0;
+  color: #555;
+}
+
+.cost-summary {
+  background-color: #f2f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #cde0f7;
+}
+
+.cost-summary h3 {
+  margin-bottom: 10px;
+  color: #2d6cdf;
+}
+
+.cost-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.total-cost {
+  font-weight: bold;
+  color: #1c4cc1;
+  font-size: 18px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+  background-color: #a0c8ff;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+}
