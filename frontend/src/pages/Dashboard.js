@@ -45,7 +45,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/dashboard/', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/dashboard/', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -96,7 +96,7 @@ const Dashboard = () => {
     try {
       const newStatus = actionType === 'cancel' ? 'cancelled' : 'completed';
 
-      const response = await fetch(`http://localhost:5000/api/bookings/${selectedBooking._id}/status`, {
+      const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/bookings/${selectedBooking._id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

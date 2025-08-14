@@ -69,7 +69,7 @@ const LabourerList = () => {
 
   const fetchlabourers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/labourers');
+      const res = await fetch('https://labourconnect-a3xg.onrender.com/api/users/labourers');
       const data = await res.json();
       const labourersArray = Array.isArray(data)
         ? data

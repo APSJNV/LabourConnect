@@ -48,7 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://labourconnect-a3xg.onrender.com",
   "devDependencies": {
     "concurrently": "^9.2.0"
   }

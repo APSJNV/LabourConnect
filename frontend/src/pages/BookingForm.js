@@ -65,7 +65,7 @@ const BookingForm = () => {
   const fetchLabourers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/labourers', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/labourers', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ const BookingForm = () => {
   const fetchLabourerDetails = async (labourerId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/labourers/${labourerId}`, {
+      const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/labourers/${labourerId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -162,7 +162,7 @@ const handleSubmit = async (e) => {
 
     console.log('Payload:', bookingPayload);
 
-    const response = await fetch(`http://localhost:5000/api/bookings/labourer/${selectedLabourer}`, {
+    const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/bookings/labourer/${selectedLabourer}`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,

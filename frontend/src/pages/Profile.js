@@ -27,7 +27,7 @@ const Profile = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5000/api/users/profile', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/users/profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/users/profile', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/users/profile', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

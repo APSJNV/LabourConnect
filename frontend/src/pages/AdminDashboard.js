@@ -40,7 +40,7 @@ const AdminDashboard = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/dashboard', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/admin/dashboard', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/users', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/admin/users', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/bookings', {
+      const response = await fetch('https://labourconnect-a3xg.onrender.com/api/admin/bookings', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ const AdminDashboard = () => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/api/admin/users/${userId}`, {
+        const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/admin/users/${userId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -130,7 +130,7 @@ const AdminDashboard = () => {
   const handleUpdateUserType = async (userId, newUserType) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/users/${userId}/usertype`, {
+      const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/admin/users/${userId}/usertype`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -157,7 +157,7 @@ const AdminDashboard = () => {
     if (window.confirm('Are you sure you want to delete this booking?')) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/api/admin/bookings/${bookingId}`, {
+        const response = await fetch(`https://labourconnect-a3xg.onrender.com/api/admin/bookings/${bookingId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
