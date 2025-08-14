@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Row, Col, Card, Button, Table, Badge, Form, Modal, Alert, Dropdown } from 'react-bootstrap';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-
+import default_profile from '../assets/images/Default_profile.jpg';
 const Dashboard = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -272,7 +272,7 @@ const Dashboard = () => {
           {selectedLabourer && (
             <Row>
               <Col md={4} className="text-center">
-                <img src={selectedLabourer.profileImage} alt={selectedLabourer.name} className="rounded-circle mb-3" style={{ width: '120px', height: '120px', objectFit: 'cover' }} />
+                <img src={selectedLabourer.profileImage || default_profile} alt={selectedLabourer.name} className="rounded-circle mb-3" style={{ width: '120px', height: '120px', objectFit: 'cover' }} />
                 <h5>{selectedLabourer.name}</h5>
                 <p className="text-muted">{selectedLabourer.category}</p>
                 <Badge bg={selectedLabourer.isAvailable ? 'success' : 'secondary'} className="mb-3">

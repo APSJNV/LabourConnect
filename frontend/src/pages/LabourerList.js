@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Button, Badge, Modal } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
+import default_profile from '../assets/images/Default_profile.jpg';
 const LabourerList = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -264,7 +264,7 @@ const LabourerList = () => {
                 <Card.Body>
                   <div className="d-flex align-items-start mb-3">
                     <img
-                      src={labourer.profileImage}
+                      src={labourer.profileImage || default_profile}
                       alt={labourer.name}
                       className="rounded-circle me-3"
                       style={{ width: '60px', height: '60px', objectFit: 'cover' }}
@@ -372,7 +372,7 @@ const LabourerList = () => {
             <Row>
               <Col md={4} className="text-center">
                 <img
-                  src={selectedlabourer.profileImage}
+                  src={selectedlabourer.profileImage || default_profile}
                   alt={selectedlabourer.name}
                   className="rounded-circle mb-3"
                   style={{ width: '120px', height: '120px', objectFit: 'cover' }}
