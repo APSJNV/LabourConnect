@@ -8,12 +8,14 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
+    "labour-booking-frontend": "file:../frontend",
     "mongoose": "^7.8.7",
     "multer": "^1.4.5-lts.1",
     "twilio": "^5.7.1"
